@@ -20,10 +20,11 @@
 
 class clp {
   public:
-	clp(void);
     void sety (int y);
     void rsty (int y);
     void togy (int y);
+    void runTasks (void);
+	int contador;
 
   private:
 };

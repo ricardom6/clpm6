@@ -18,7 +18,7 @@
 #include "Arduino.h"
 
 //========Os metodos são declarados aqui.
-	clp::clp(){};
+
 void clp::sety (int y) {
   digitalWrite (y, HIGH); //Funcao que seta uma saida.
 }
@@ -29,4 +29,8 @@ void  clp::togy (int y) {
   if (digitalRead(y)) digitalWrite (y, LOW);  //Funcao que inverte o status de uma saida.
   else  digitalWrite (y, HIGH);
 }
+void clp::runTasks () {
+ contador ++;
+}
+
 
