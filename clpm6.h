@@ -24,8 +24,16 @@ class clp {
     void rsty (int y);
     void togy (int y);
     void runTasks (void);
+
 	int contador;
+	//========variaveis para temporizador
+	boolean task100ms = 0;
+	boolean task1s = 0;
+	unsigned long previousMillis1 = 2000;        // will store last time LED was updated // Generally, you should use "unsigned long" for variables that hold time // The value will quickly become too large for an int to store
+	const long interval1 = 1000;           // interval at which to blink (milliseconds) >=20
+
 
   private:
+	void time();
 };
 #endif

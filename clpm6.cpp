@@ -30,7 +30,29 @@ void  clp::togy (int y) {
   else  digitalWrite (y, HIGH);
 }
 void clp::runTasks () {
- contador ++;
+	clp::time();
+
 }
 
 
+
+
+
+void clp::time(){
+  if (previousMillis1 > millis())previousMillis1 = millis();
+  if (!task100ms) {
+    if (millis() - previousMillis1 >= interval1) {
+    task100ms = HIGH;
+    contador++;
+    }
+  }
+  else {
+    previousMillis1 = previousMillis1 + interval1;
+    task100ms = LOW;
+    task1s = LOW;
+  }
+  if (contador>=10){
+    task1s = HIGH;
+    contador = 0;
+}
+}
